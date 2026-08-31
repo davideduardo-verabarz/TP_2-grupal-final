@@ -43,7 +43,7 @@ public class ElCodigoSecreto extends javax.swing.JFrame {
         jPasswordField3.setEditable(false);
 
         jLabel1.setText("Escribí 3 dígitos y presioná ENTER");
-        lblMagnitud.setText("");
+        txtMagnitud.setText("");
     }
     
      public ElCodigoSecreto() {
@@ -72,7 +72,7 @@ public class ElCodigoSecreto extends javax.swing.JFrame {
         lblTrofeo = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        lblMagnitud = new javax.swing.JTextField();
+        txtMagnitud = new javax.swing.JTextField();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -137,8 +137,8 @@ public class ElCodigoSecreto extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 102, 102));
         jLabel2.setText("escribe 3 digitos + ENTER");
 
-        lblMagnitud.setBackground(new java.awt.Color(255, 204, 204));
-        lblMagnitud.addActionListener(this::lblMagnitudActionPerformed);
+        txtMagnitud.setBackground(new java.awt.Color(255, 204, 204));
+        txtMagnitud.addActionListener(this::txtMagnitudActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -147,14 +147,14 @@ public class ElCodigoSecreto extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE))
-            .addComponent(lblMagnitud)
+            .addComponent(txtMagnitud)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblMagnitud, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(txtMagnitud, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jDesktopPane1.setLayer(pnlPassword, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -234,9 +234,9 @@ public class ElCodigoSecreto extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRevelarActionPerformed
 
-    private void lblMagnitudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblMagnitudActionPerformed
+    private void txtMagnitudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMagnitudActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblMagnitudActionPerformed
+    }//GEN-LAST:event_txtMagnitudActionPerformed
 
     /**
      * @param args the command line arguments
@@ -273,9 +273,9 @@ public class ElCodigoSecreto extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordField3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField lblMagnitud;
     private javax.swing.JLabel lblTrofeo;
     private javax.swing.JLabel lbltitulo;
     private javax.swing.JPanel pnlPassword;
+    private javax.swing.JTextField txtMagnitud;
     // End of variables declaration//GEN-END:variables
 }
