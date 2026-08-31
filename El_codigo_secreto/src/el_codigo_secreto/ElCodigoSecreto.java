@@ -71,8 +71,8 @@ public class ElCodigoSecreto extends javax.swing.JFrame {
         btnRevelar = new javax.swing.JButton();
         lblTrofeo = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        lblMagnitud = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        lblMagnitud = new javax.swing.JTextField();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -133,12 +133,12 @@ public class ElCodigoSecreto extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 204));
 
-        lblMagnitud.setBackground(new java.awt.Color(255, 204, 204));
-        lblMagnitud.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
-
         jLabel2.setFont(new java.awt.Font("SansSerif", 2, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 102, 102));
         jLabel2.setText("escribe 3 digitos + ENTER");
+
+        lblMagnitud.setBackground(new java.awt.Color(255, 204, 204));
+        lblMagnitud.addActionListener(this::lblMagnitudActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -147,18 +147,15 @@ public class ElCodigoSecreto extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE))
-            .addComponent(lblMagnitud, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblMagnitud)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblMagnitud, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblMagnitud, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-
-        lblMagnitud.getAccessibleContext().setAccessibleDescription("escribe tres digitos + ENTER");
 
         jDesktopPane1.setLayer(pnlPassword, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(lbltitulo, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -212,7 +209,7 @@ public class ElCodigoSecreto extends javax.swing.JFrame {
                             .addComponent(lblTrofeo, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
@@ -236,6 +233,10 @@ public class ElCodigoSecreto extends javax.swing.JFrame {
     private void btnRevelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRevelarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRevelarActionPerformed
+
+    private void lblMagnitudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblMagnitudActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblMagnitudActionPerformed
 
     /**
      * @param args the command line arguments
@@ -272,7 +273,7 @@ public class ElCodigoSecreto extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordField3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JLabel lblMagnitud;
+    private javax.swing.JTextField lblMagnitud;
     private javax.swing.JLabel lblTrofeo;
     private javax.swing.JLabel lbltitulo;
     private javax.swing.JPanel pnlPassword;
