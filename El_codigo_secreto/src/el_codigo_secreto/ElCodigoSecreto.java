@@ -140,7 +140,9 @@ public class ElCodigoSecreto extends javax.swing.JFrame {
         btnRevelar.setToolTipText("");
         btnRevelar.addActionListener(this::btnRevelarActionPerformed);
 
+        lblTrofeo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/trofeo.png"))); // NOI18N
         lblTrofeo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        lblTrofeo.setVisible(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 204));
 
