@@ -50,6 +50,9 @@ public class ElCodigoSecreto extends javax.swing.JFrame {
         initComponents();
         generarCodigoSecreto();
     }
+      private void cargarTrofeo() {
+        lblTrofeo.setVisible(true);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -245,20 +248,67 @@ public class ElCodigoSecreto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRevelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRevelarActionPerformed
-        if (ayudas == 0) {
-            psw1.setEchoChar((char) 0);
-        }else{
-        psw2.setEchoChar((char) 0);
-        }
-        ayudas++;
+       if (ayudas >= MAX_AYUDAS) {
+        javax.swing.JOptionPane.showMessageDialog(this,
+                "No hay mas Revelaciones!",
+                "Mensaje",
+                javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        return;
     }//GEN-LAST:event_btnRevelarActionPerformed
-
+    javax.swing.JPasswordField[] campos = { psw1, psw2, psw3 };
+    campos[ayudas].setEchoChar((char) 0); 
+    ayudas++;
+}
     private void txtMagnitudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMagnitudActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtMagnitudActionPerformed
 
     private void txtMagnitudKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMagnitudKeyTyped
-        System.out.println("Ingrese los tres digitos");
+      char tecla = evt.getKeyChar();
+
+        if (tecla == '\n') {
+
+            String input = txtMagnitud.getText().trim();
+
+            if (input.length() != 3 || !input.matches("\\d+")) {
+                jLabel1.setText("⚠ Por favor, ingresa exactamente 3 números.");
+                txtMagnitud.setText("");
+                return;
+            }
+
+            intentos++;
+
+            int intentoNum = Integer.parseInt(input);
+            String intentoStr = input;
+            String secretoStr = String.valueOf(codigoSecreto);
+            if (intentoNum < codigoSecreto) {
+                jLabel1.setText("El código secreto es más alto");
+            } else if (intentoNum > codigoSecreto) {
+                jLabel1.setText("El código secreto es más bajo");
+            }
+
+            javax.swing.JPasswordField[] campos = { psw1, psw2, psw3 };
+
+            for (int i = 0; i < 3; i++) {
+                if (intentoStr.charAt(i) == secretoStr.charAt(i)) {
+                    campos[i].setEchoChar((char) 0); 
+                }
+            }
+
+   
+            if (intentoNum == codigoSecreto) {
+                cargarTrofeo();
+                jLabel1.setText("Adivinaste el código!");
+
+                javax.swing.JOptionPane.showMessageDialog(this,
+                        "¡Ganaste!\nCódigo correcto: " + codigoSecreto +
+                        "\nIntentos totales: " + intentos,
+                        "¡Victoria!",
+                        javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            }
+
+            txtMagnitud.setText("");
+        }
     }//GEN-LAST:event_txtMagnitudKeyTyped
 
     /**
